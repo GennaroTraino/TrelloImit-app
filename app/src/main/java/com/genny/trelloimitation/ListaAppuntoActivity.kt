@@ -52,6 +52,39 @@ class ListaAppuntoActivity : AppCompatActivity() {
         //ADAPTER
         listview.adapter = MyListAdapter(this, R.layout.row, list)
 
+        //Click su Item
+        listview.setOnItemClickListener { parent, view, position, id ->
+            val title = list[position].titolo
+            val svolto = list[position].svolto
+
+            if (svolto == 0) {
+                var RAW = "UPDATE products SET svolto = 1 WHERE nome = '" + title + "' AND ancora = '" + ancora + "'"
+                db.execSQL(RAW)
+                //controllo per padre appunto
+                var cond:Int = 1
+                for (i in list) {
+                    if (i.svolto == 0 && i.ancora == ancora)
+                    {
+                        cond = 0
+                    }
+                }
+
+                if (cond == 1){
+                    var RAW = "UPDATE products SET svolto = 1 WHERE nome = '" + ancora + "'"
+                    db.execSQL(RAW)
+                }
+
+
+            } else if (svolto == 1) {
+                var RAW = "UPDATE products SET svolto = 0 WHERE nome = '" + title + "' AND ancora = '" + ancora + "'"
+                db.execSQL(RAW)
+            }
+
+            val intent = Intent(this,ListaAppuntoActivity::class.java)
+            intent.putExtra("nome",ancora)
+            startActivity(intent)
+            finish()
+        }
 
         fab_b_sub.setOnClickListener {
             val intent = Intent(this,InserimentoSubActivity::class.java)
@@ -109,5 +142,12 @@ class ListaAppuntoActivity : AppCompatActivity() {
         }
 
         return super.onContextItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this,HomeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

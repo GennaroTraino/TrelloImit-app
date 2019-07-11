@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_inserimento_main.*
+import kotlinx.android.synthetic.main.activity_inserimento_sub.*
 
 class InserimentoMainActivity : AppCompatActivity() {
 
@@ -31,6 +32,12 @@ class InserimentoMainActivity : AppCompatActivity() {
 
             val intent = Intent(this,HomeActivity::class.java)
             startActivity(intent)
+        }
+
+        annulla_main.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

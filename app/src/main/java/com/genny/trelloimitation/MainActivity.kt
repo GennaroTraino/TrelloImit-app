@@ -22,26 +22,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //DATABASE
-        var db : SQLiteDatabase = openOrCreateDatabase("trellodb", Context.MODE_PRIVATE,null)
+        var db: SQLiteDatabase = openOrCreateDatabase("trellodb", Context.MODE_PRIVATE, null)
         createdb(db)
 
         //LOGIN o Home Page
-        /*var shared: SharedPreferences = getSharedPreferences("username", Context.MODE_PRIVATE)
+        var shared: SharedPreferences = getSharedPreferences("username", Context.MODE_PRIVATE)
 
-        if(shared.getString("username"," ") == " " ) {
-            val intent = Intent(this,LoginActivity::class.java)
-            startActivity(intent)
-        } else {*/
-            val intent = Intent(this,HomeActivity::class.java)
+
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
-        //}
 
 
 
-    }
-
-
+        }
 
 
 
@@ -61,10 +55,10 @@ class MainActivity : AppCompatActivity() {
         db.execSQL("INSERT INTO users VALUES('utente6','utente6');")
 
         db.execSQL("DELETE FROM products")
-        db.execSQL("INSERT INTO products VALUES ('Progetto TecWeb', 'Completare il progetto JoinTheOffer per esame di TecWeb', ' ', 'pippo42', 1)")
+        db.execSQL("INSERT INTO products VALUES ('Progetto TecWeb', 'Completare il progetto JoinTheOffer per esame di TecWeb', ' ', 'pippo42', 0)")
         db.execSQL("INSERT INTO products VALUES ('Fare La Spesa', 'Lista articoli da acuistare', ' ', 'pippo42', 0)")
         db.execSQL("INSERT INTO products VALUES ('Ricordare', 'Lista di impegni presi e To Do', ' ', 'pippo42', 0)")
-        db.execSQL("INSERT INTO products VALUES ('Progetto Teminali', 'Completare il progetto JoinTheOffer per esame di Terminali', ' ', 'pippo42', 0)")
+        db.execSQL("INSERT INTO products VALUES ('Progetto Terminali', 'Completare il progetto JoinTheOffer per esame di Terminali', ' ', 'pippo42', 0)")
 
         db.execSQL("INSERT INTO products VALUES ('Imparare Flask', 'Imparare flask da Tutorialspoint', 'Progetto TecWeb', 'pippo42', 0)")
         db.execSQL("INSERT INTO products VALUES ('Funzione Join', 'Scrivere la funzione di join per il progetto', 'Progetto TecWeb', 'pippo42', 0)")

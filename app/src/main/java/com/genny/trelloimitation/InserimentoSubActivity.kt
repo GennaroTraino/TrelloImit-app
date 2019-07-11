@@ -39,6 +39,14 @@ class InserimentoSubActivity : AppCompatActivity() {
             finish()
         }
 
+        annulla_sub.setOnClickListener {
+            val intent = Intent(this,ListaAppuntoActivity::class.java)
+            intent.putExtra("nome",ancora)
+            startActivity(intent)
+            finish()
+        }
+
+
 
     }
 }

@@ -38,6 +38,7 @@ class HomeActivity : AppCompatActivity() {
         var editor = shared.edit()
         editor.putString("username","pippo42")
         editor.commit()
+
         var username = shared.getString("username"," ")
 
         var RAW = "Select * from products where utente = '" + username  +"' AND ancora = ' '"
