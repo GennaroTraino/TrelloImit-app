@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Inserisci Memo"
+                  android:textStyle="bold"
+                  android:textSize="40dp"
+                  android:gravity="center"
+                  android:textColor="@color/colorPrimary"
+        />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Titolo"
+                android:layout_marginRight="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="50dp"
+                android:id="@+id/edit_titolo"
+        />
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descrizione"
+                android:layout_marginRight="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginBottom="100dp"
+                android:id="@+id/edit_descrizione"
+        />
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:background="@color/colorPrimary"
+                android:text="Inserisci"
+                android:textStyle="bold"
+                android:layout_marginBottom="50dp"
+                android:id="@+id/inserisci_sub"
+        />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:background="@color/colorAccent"
+            android:text="Annulla"
+            android:textStyle="bold"
+            android:id="@+id/annulla_sub"
+    />
+
+    </LinearLayout>
+
+</RelativeLayout>
